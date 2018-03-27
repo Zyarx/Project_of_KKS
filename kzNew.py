@@ -1,5 +1,22 @@
+#Spinkoins
+#область работы карины
 
+#подключение функции рандома
+import random
 
+#задаем рандомное число для отгадывания
+random_num=random.randint(1000,9999)
+#переводим рандомное число в строку для проверки
+q=str(random_num)
+#начало рекурсивной ловушки для рандомного числа
+if q[0]!=q[1]!=q[2]!=q[3] and q[1]!=q[0]!=q[2]!=q[3] and q[2]!=q[0]!=q[1]!=q[3] and q[3]!=q[0]!=q[1]!=q[2]:
+        print("")
+elif q[0]==q[1] or q[0]==q[2] or q[0]==q[3] or q[1]==q[2] or q[1]==q[3] or q[2]==q[3]  :
+        while q[0]==q[1] or q[0]==q[2] or q[0]==q[3] or q[1]==q[2] or q[1]==q[3] or q[2]==q[3] :
+                q=str(random.randint(1000,9999))
+
+#конец ловушки
+print(q)
 
 #начало функции по вводу пользовательского числа
 def num():
@@ -29,14 +46,14 @@ def num():
 
 
 #начало функции топоры и тузы
-dev Ace_Axe(n,q):
+def Ace_Axe(n,q):
 
-	Начало реализации правил игры
+	#Начало реализации правил игры
 
 	#print("Число игрока:"+n)
 	#print("Число что задала система:"+q)
-	#i=int(0)
-	#c=int(0)
+	i=0
+	c=0
 
 	#система работы топоров
 
@@ -68,8 +85,26 @@ dev Ace_Axe(n,q):
 	#cистема работы тузов отлажена
 
 	return d
-	return c
+
 #конец функии 
- 
-num()
-Ace_Axe()
+
+
+#n=num()
+print(num)
+print(q)
+#d=Ace_Axe(n,q)
+#print(d)
+
+def open(num,q):
+	n=num()
+	d=Ace_Axe(n,q)
+	return d
+d=open(num,q)
+print(d)
+
+
+if d==0:
+	print("OK")
+else :
+	d=open(num,q)
+
